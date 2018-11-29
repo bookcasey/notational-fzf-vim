@@ -79,9 +79,9 @@ def process_line(line: str) -> str:
     # if shortened_parent:
     #    colored_short_name = color(shortened_parent + "/", PURPLE)
     #else:
-        colored_short_name = ""
+    #colored_short_name = ""
 
-    colored_short_name += color(basename, CYAN)
+    colored_short_name = color(basename, CYAN)
 
     # Format is: long form, line number, short form, line number, rest of line. This is so Vim can process it.
     formatted_line = ":".join(
