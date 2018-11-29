@@ -76,9 +76,9 @@ def process_line(line: str) -> str:
     # The conditional is to avoid a leading slash if the parent is replaced
     # with an empty directory. The slash is manually colored because otherwise
     # `os.path.join` won't do it.
-    if shortened_parent:
-        colored_short_name = color(shortened_parent + "/", PURPLE)
-    else:
+    # if shortened_parent:
+    #    colored_short_name = color(shortened_parent + "/", PURPLE)
+    #else:
         colored_short_name = ""
 
     colored_short_name += color(basename, CYAN)
