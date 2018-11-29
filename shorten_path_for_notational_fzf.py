@@ -5,7 +5,7 @@
 # script, and the point of this one is to run fast.
 
 from os import pardir
-from os.path import abspath, expanduser, join, split
+from os.path import abspath, expanduser, join, split, splitext
 from pathlib import PurePath
 from sys import stdin
 
@@ -82,9 +82,9 @@ def process_line(line: str) -> str:
     #colored_short_name = ""
 
     # Quick and dirty extension removal, will not work for filenames than contain a '.'
-    # simple_name = os.path.splitext(basename)[0]
+    simple_name = splitext(basename)[0]
     
-    colored_short_name = color(basename, CYAN)
+    colored_short_name = color(simple_name, CYAN)
 
     # Format is: long form, line number, short form, line number, rest of line. This is so Vim can process it.
     formatted_line = ":".join(
